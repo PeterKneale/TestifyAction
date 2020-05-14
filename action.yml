@@ -1,0 +1,16 @@
+name: 'Upload Test Results'
+description: 'Upload test results'
+inputs:
+  file:
+    description: 'File to upload'
+    required: true
+outputs:
+  success:
+    description: 'A boolean value'
+  message:
+    description: 'A string value'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file }}
